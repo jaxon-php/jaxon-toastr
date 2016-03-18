@@ -74,7 +74,7 @@ class Toastr extends \Xajax\Plugin\Response
 			$script = 'toastr.info("' . $content . '","' . $title . '")';
 		else
 			$script = 'toastr.info("' . $content . '")';
-		$this->xResponse->script($script);
+		$this->response()->script($script);
 	}
 
 	public function success($content, $title = null)
@@ -83,7 +83,7 @@ class Toastr extends \Xajax\Plugin\Response
 			$script = 'toastr.success("' . $content . '","' . $title . '")';
 		else
 			$script = 'toastr.success("' . $content . '")';
-		$this->xResponse->script($script);
+		$this->response()->script($script);
 	}
 
 	public function warning($content, $title = null)
@@ -92,7 +92,7 @@ class Toastr extends \Xajax\Plugin\Response
 			$script = 'toastr.warning("' . $content . '","' . $title . '")';
 		else
 			$script = 'toastr.warning("' . $content . '")';
-		$this->xResponse->script($script);
+		$this->response()->script($script);
 	}
 
 	public function error($content, $title = null)
@@ -101,17 +101,17 @@ class Toastr extends \Xajax\Plugin\Response
 			$script = 'toastr.error("' . $content . '","' . $title . '")';
 		else
 			$script = 'toastr.error("' . $content . '")';
-		$this->xResponse->script($script);
+		$this->response()->script($script);
 	}
 
 	public function remove()
 	{
-		$this->xResponse->script('toastr.remove()');
+		$this->response()->script('toastr.remove()');
 	}
 
 	public function clear()
 	{
-		$this->xResponse->script('toastr.clear()');
+		$this->response()->script('toastr.clear()');
 	}
 }
 
