@@ -48,7 +48,8 @@ class Toastr extends \Xajax\Plugin\Response
 		{
 			return '';
 		}
-		$sScript = "jQuery(document).ready(function($){\n";
+		$sScript = '
+jQuery(document).ready(function($){';
 		foreach($this->aOptions as $name => $value)
 		{
 			if(is_string($value))
@@ -63,9 +64,12 @@ class Toastr extends \Xajax\Plugin\Response
 			{
 				$value = print_r($value, true);
 			}
-			$sScript .= "\ttoastr.options.$name = $value;\n";
+			$sScript .= '
+	toastr.options.' . $name . ' = ' . $value . ';';
 		}
-		return $sScript . "});";
+		return $sScript . '
+});
+';
 	}
 
 	public function info($content, $title = null)
