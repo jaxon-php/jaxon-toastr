@@ -6,15 +6,7 @@ This package implements javascript notifications in an Xajax application, with t
 
 Run `composer require lagdo/xajax-toastr`, or add `"lagdo/xajax-toastr": : "dev-master"` in your composer.json.
 
-Add the code to load JQuery and the Xajax javascript and CSS code in the HTML header.
-```
-<script src="//code.jquery.com/jquery-1.10.1.min.js"></script>
-<?php
-	echo $xajax->getCssInclude();
-	echo $xajax->getJsInclude();
-	echo $xajax->getJavascript();
-?>
-```
+Add JQuery in the HTML header.
 
 #### Usage
 
@@ -26,7 +18,7 @@ function myFunction()
 	// Process the request
 	// ...
 	// Print a notification with Toastr
-	$xResponse->toastr->success("");
+	$xResponse->toastr->success("You did it!!!");
 	return $xResponse;
 }
 ```
