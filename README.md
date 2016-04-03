@@ -4,7 +4,7 @@ This package implements javascript notifications in an Xajax application, with t
 
 #### Installation
 
-Run `composer require lagdo/xajax-toastr`, or add `"lagdo/xajax-toastr": : "dev-master"` in your composer.json.
+Run `composer require lagdo/xajax-toastr`, or add `"lagdo/xajax-toastr": "dev-master"` in your composer.json.
 
 Add JQuery in the HTML header.
 
