@@ -48,8 +48,7 @@ class Toastr extends \Xajax\Plugin\Response
 		{
 			return '';
 		}
-		$sScript = '
-jQuery(document).ready(function($){';
+		$sScript = '';
 		foreach($this->aOptions as $name => $value)
 		{
 			if(is_string($value))
@@ -64,12 +63,9 @@ jQuery(document).ready(function($){';
 			{
 				$value = print_r($value, true);
 			}
-			$sScript .= '
-	toastr.options.' . $name . ' = ' . $value . ';';
+			$sScript .= "toastr.options.$name = $value;\n";
 		}
-		return $sScript . '
-});
-';
+		return $sScript;
 	}
 
 	public function info($content, $title = null)
