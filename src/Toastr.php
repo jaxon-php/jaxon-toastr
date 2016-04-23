@@ -4,12 +4,10 @@ namespace Xajax\Toastr;
 
 class Toastr extends \Xajax\Plugin\Response
 {
-	protected $aOptions;
+	use \Xajax\Utils\ContainerTrait;
 
 	public function __construct()
-	{
-		$this->aOptions = array();
-	}
+	{}
 
 	public function getName()
 	{
@@ -20,16 +18,6 @@ class Toastr extends \Xajax\Plugin\Response
 	{
 		// Use the version number as hash
 		return '0.1.0';
-	}
-
-	public function setOption($name, $value)
-	{
-		$this->aOptions[$name] = $value;
-	}
-
-	public function setOptions(array $aOptions)
-	{
-		$this->aOptions = array_merge($this->aOptions, $aOptions);
 	}
 
 	public function getJsInclude()
@@ -44,13 +32,11 @@ class Toastr extends \Xajax\Plugin\Response
 
 	public function getClientScript()
 	{
-		if(count($this->aOptions) == 0)
-		{
-			return '';
-		}
+		$aOptions = $this->getOptionNames('toastr.options.');
 		$sScript = '';
-		foreach($this->aOptions as $name => $value)
+		foreach($aOptions as $name)
 		{
+			$value = $this->getOption($name);
 			if(is_string($value))
 			{
 				$value = "'$value'";
@@ -63,7 +49,7 @@ class Toastr extends \Xajax\Plugin\Response
 			{
 				$value = print_r($value, true);
 			}
-			$sScript .= "toastr.options.$name = $value;\n";
+			$sScript .= "$name = $value;\n";
 		}
 		return $sScript;
 	}
