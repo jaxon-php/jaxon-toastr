@@ -22,11 +22,19 @@ class Toastr extends \Xajax\Plugin\Response
 
 	public function getJs()
  	{
+ 		if(!$this->includeAssets())
+		{
+			return '';
+		}
  		return '<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>';
  	}
 
  	public function getCss()
  	{
+ 		if(!$this->includeAssets())
+		{
+			return '';
+		}
  		return '<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">';
  	}
 
