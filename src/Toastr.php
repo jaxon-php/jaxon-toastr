@@ -20,17 +20,17 @@ class Toastr extends \Xajax\Plugin\Response
 		return '0.1.0';
 	}
 
-	public function getJsInclude()
+	public function getJs()
  	{
  		return '<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>';
  	}
 
- 	public function getCssInclude()
+ 	public function getCss()
  	{
  		return '<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">';
  	}
 
-	public function getClientScript()
+	public function getScript()
 	{
 		$aOptions = $this->getOptionNames('toastr.options.');
 		$sScript = '';
