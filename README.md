@@ -14,12 +14,12 @@ The plugin can be called with the `toastr` attribute in the Xajax response objec
 ```
 function myFunction()
 {
-	$xResponse = new \Xajax\Response\Response();
-	// Process the request
-	// ...
-	// Print a notification with Toastr
-	$xResponse->toastr->success("You did it!!!");
-	return $xResponse;
+    $xResponse = new \Xajax\Response\Response();
+    // Process the request
+    // ...
+    // Print a notification with Toastr
+    $xResponse->toastr->success("You did it!!!");
+    return $xResponse;
 }
 ```
 
@@ -27,10 +27,10 @@ function myFunction()
 
 The plugin implements the same functions as the JQuery Toastr plugin.
 ```
-	public function info($content, $title = null);
-	public function success($content, $title = null);
-	public function warning($content, $title = null);
-	public function error($content, $title = null);
-	public function remove();
-	public function clear();
+    public function info($content, $title = null);
+    public function success($content, $title = null);
+    public function warning($content, $title = null);
+    public function error($content, $title = null);
+    public function remove();
+    public function clear();
 ```
