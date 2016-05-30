@@ -21,22 +21,22 @@ class Toastr extends \Xajax\Plugin\Response
     }
 
     public function getJs()
-     {
-         if(!$this->includeAssets())
+    {
+        if(!$this->includeAssets())
         {
             return '';
         }
-         return '<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>';
-     }
+        return '<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>';
+    }
 
-     public function getCss()
-     {
-         if(!$this->includeAssets())
+    public function getCss()
+    {
+        if(!$this->includeAssets())
         {
             return '';
         }
-         return '<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">';
-     }
+        return '<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">';
+    }
 
     public function getScript()
     {
@@ -62,39 +62,39 @@ class Toastr extends \Xajax\Plugin\Response
         return $sScript;
     }
 
-    public function info($content, $title = null)
+    public function info($message, $title = null)
     {
         if(($title))
-            $script = 'toastr.info("' . $content . '","' . $title . '")';
+            $script = 'toastr.info("' . $message . '","' . $title . '")';
         else
-            $script = 'toastr.info("' . $content . '")';
+            $script = 'toastr.info("' . $message . '")';
         $this->response()->script($script);
     }
 
-    public function success($content, $title = null)
+    public function success($message, $title = null)
     {
         if(($title))
-            $script = 'toastr.success("' . $content . '","' . $title . '")';
+            $script = 'toastr.success("' . $message . '","' . $title . '")';
         else
-            $script = 'toastr.success("' . $content . '")';
+            $script = 'toastr.success("' . $message . '")';
         $this->response()->script($script);
     }
 
-    public function warning($content, $title = null)
+    public function warning($message, $title = null)
     {
         if(($title))
-            $script = 'toastr.warning("' . $content . '","' . $title . '")';
+            $script = 'toastr.warning("' . $message . '","' . $title . '")';
         else
-            $script = 'toastr.warning("' . $content . '")';
+            $script = 'toastr.warning("' . $message . '")';
         $this->response()->script($script);
     }
 
-    public function error($content, $title = null)
+    public function error($message, $title = null)
     {
         if(($title))
-            $script = 'toastr.error("' . $content . '","' . $title . '")';
+            $script = 'toastr.error("' . $message . '","' . $title . '")';
         else
-            $script = 'toastr.error("' . $content . '")';
+            $script = 'toastr.error("' . $message . '")';
         $this->response()->script($script);
     }
 
