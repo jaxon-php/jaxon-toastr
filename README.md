@@ -42,7 +42,7 @@ Usage
 -----
 
 This example shows how to print a notification.
-```
+```php
 function myFunction()
 {
     $response = new \Xajax\Response\Response();
@@ -58,13 +58,13 @@ function myFunction()
 ```
 
 The `toastr` attribute of Xajax response provides the same functions as the Toastr library.
-```
-public function info($message, $title = null);      //
-public function success($message, $title = null);   //
-public function warning($message, $title = null);   //
-public function error($message, $title = null);     //
-public function remove();                           //
-public function clear();                            //
+```php
+public function info($message, $title = null);
+public function success($message, $title = null);
+public function warning($message, $title = null);
+public function error($message, $title = null);
+public function remove();
+public function clear();
 ```
 
 Contribute
