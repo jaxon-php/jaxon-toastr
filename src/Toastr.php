@@ -1,10 +1,10 @@
 <?php
 
-namespace Xajax\Toastr;
+namespace Jaxon\Toastr;
 
-class Toastr extends \Xajax\Plugin\Response
+class Toastr extends \Jaxon\Plugin\Response
 {
-    use \Xajax\Utils\ContainerTrait;
+    use \Jaxon\Utils\ContainerTrait;
 
     public function __construct()
     {}

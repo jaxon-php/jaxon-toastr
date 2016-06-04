@@ -1,4 +1,4 @@
 <?php
 
 // Register an instance of this plugin
-\Xajax\Plugin\Manager::getInstance()->registerPlugin(new \Xajax\Toastr\Toastr());
+\Jaxon\Plugin\Manager::getInstance()->registerPlugin(new \Jaxon\Toastr\Toastr());

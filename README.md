@@ -1,13 +1,13 @@
-JQuery Toastr for Xajax
+JQuery Toastr for Jaxon
 =======================
 
-This package implements javascript notification in Xajax applications using the JQuery Toastr library.
+This package implements javascript notification in Jaxon applications using the JQuery Toastr library.
 https://github.com/CodeSeven/toastr.
 
 Features
 --------
 
-- Enrich the Xajax response with notification functions.
+- Enrich the Jaxon response with notification functions.
 - Automatically insert the Js and CSS files of the Toastr library into the HTML page.
 
 Installation
@@ -16,13 +16,13 @@ Installation
 Add the following line in the `composer.json` file.
 ```json
 "require": {
-    "lagdo/xajax-toastr": "dev-master"
+    "lagdo/jaxon-toastr": "dev-master"
 }
 ```
 
 Or run the command
 ```bash
-composer require lagdo/xajax-toastr
+composer require lagdo/jaxon-toastr
 ```
 
 Configuration
@@ -35,7 +35,7 @@ By default the plugin loads the Js and CSS files from CDN JS.
 
 This can be disabled by setting the `assets.include.toastr` option to `false`.
 
-The options of the Toastr library can be set under the `toastr.options.` section of the Xajax configuration.
+The options of the Toastr library can be set under the `toastr.options.` section of the Jaxon configuration.
 See [here](http://codeseven.github.io/toastr/demo.html) for the full list of options.
 
 Usage
@@ -45,7 +45,7 @@ This example shows how to print a notification.
 ```php
 function myFunction()
 {
-    $response = new \Xajax\Response\Response();
+    $response = new \Jaxon\Response\Response();
 
     // Process the request
     // ...
@@ -57,7 +57,7 @@ function myFunction()
 }
 ```
 
-The `toastr` attribute of Xajax response provides the same functions as the Toastr library.
+The `toastr` attribute of Jaxon response provides the same functions as the Toastr library.
 ```php
 public function info($message, $title = null);
 public function success($message, $title = null);
@@ -70,8 +70,8 @@ public function clear();
 Contribute
 ----------
 
-- Issue Tracker: github.com/lagdo/xajax-toastr/issues
-- Source Code: github.com/lagdo/xajax-toastr
+- Issue Tracker: github.com/lagdo/jaxon-toastr/issues
+- Source Code: github.com/lagdo/jaxon-toastr
 
 License
 -------

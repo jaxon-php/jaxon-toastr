@@ -1,23 +1,23 @@
 {
-    "name": "lagdo/xajax-toastr",
+    "name": "lagdo/jaxon-toastr",
     "type": "library",
-    "description": "Xajax notification plugin with the Toastr library.",
+    "description": "Jaxon notification plugin with the Toastr library.",
     "authors": [
         {"name": "Thierry Feuzeu"}
     ],
-    "homepage": "https://github.com/lagdo/xajax-toastr",
+    "homepage": "https://github.com/lagdo/jaxon-toastr",
     "license": "BSD-2-Clause",
-    "keywords": ["Xajax", "Ajax", "PHP", "Javascript", "Notification"],
+    "keywords": ["Jaxon", "Xajax", "Ajax", "PHP", "Javascript", "Notification"],
     "support": {
-        "issues": "https://github.com/lagdo/xajax-toastr/issues",
-        "source": "https://github.com/lagdo/xajax-toastr"
+        "issues": "https://github.com/lagdo/jaxon-toastr/issues",
+        "source": "https://github.com/lagdo/jaxon-toastr"
     },
     "require": {
-        "lagdo/xajax-core": "dev-master"
+        "lagdo/jaxon-core": "dev-master"
     },
     "autoload": {
         "psr-4": {
-            "Xajax\\Toastr\\": "src/"
+            "Jaxon\\Toastr\\": "src/"
         },
         "files": [
             "src/start.php"
