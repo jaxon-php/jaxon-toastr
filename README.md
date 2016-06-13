@@ -16,13 +16,13 @@ Installation
 Add the following line in the `composer.json` file.
 ```json
 "require": {
-    "lagdo/jaxon-toastr": "dev-master"
+    "jaxon-php/jaxon-toastr": "dev-master"
 }
 ```
 
 Or run the command
 ```bash
-composer require lagdo/jaxon-toastr
+composer require jaxon-php/jaxon-toastr
 ```
 
 Configuration
@@ -70,8 +70,8 @@ public function clear();
 Contribute
 ----------
 
-- Issue Tracker: github.com/lagdo/jaxon-toastr/issues
-- Source Code: github.com/lagdo/jaxon-toastr
+- Issue Tracker: github.com/jaxon-php/jaxon-toastr/issues
+- Source Code: github.com/jaxon-php/jaxon-toastr
 
 License
 -------
