@@ -16,7 +16,7 @@ Installation
 Add the following line in the `composer.json` file.
 ```json
 "require": {
-    "jaxon-php/jaxon-toastr": "dev-master"
+    "jaxon-php/jaxon-toastr": "1.0.*"
 }
 ```
 
