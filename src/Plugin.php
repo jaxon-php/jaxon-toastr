@@ -26,7 +26,7 @@ class Plugin extends \Jaxon\Plugin\Response
         {
             return '';
         }
-        return '<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>';
+        return '<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.3/toastr.min.js"></script>';
     }
 
     public function getCss()
@@ -35,7 +35,7 @@ class Plugin extends \Jaxon\Plugin\Response
         {
             return '';
         }
-        return '<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">';
+        return '<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.3/toastr.min.css">';
     }
 
     public function getScript()
