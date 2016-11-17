@@ -17,7 +17,7 @@ class Plugin extends \Jaxon\Plugin\Response
     public function generateHash()
     {
         // Use the version number as hash
-        return '1.0.0';
+        return '1.0.2';
     }
 
     public function getJs()
@@ -59,43 +59,51 @@ class Plugin extends \Jaxon\Plugin\Response
             }
             $sScript .= "$name = $value;\n";
         }
-        return $sScript;
+        return $sScript .  '
+jaxon.command.handler.register("toastr.info", function(args) {
+    if((args.data.title))
+        toastr.info(args.data.message, args.data.title);
+    else
+        toastr.info(args.data.message);
+});
+jaxon.command.handler.register("toastr.success", function(args) {
+    if((args.data.title))
+        toastr.success(args.data.message, args.data.title);
+    else
+        toastr.success(args.data.message);
+});
+jaxon.command.handler.register("toastr.warning", function(args) {
+    if((args.data.title))
+        toastr.warning(args.data.message, args.data.title);
+    else
+        toastr.warning(args.data.message);
+});
+jaxon.command.handler.register("toastr.error", function(args) {
+    if((args.data.title))
+        toastr.error(args.data.message, args.data.title);
+    else
+        toastr.error(args.data.message);
+});';
     }
 
-    public function info($message, $title = null)
+    public function info($message, $title = '')
     {
-        if(($title))
-            $script = 'toastr.info("' . $message . '","' . $title . '")';
-        else
-            $script = 'toastr.info("' . $message . '")';
-        $this->response()->script($script);
+        $this->addCommand(array('cmd' => 'toastr.info'), array('message' => $message, 'title' => $title));
     }
 
-    public function success($message, $title = null)
+    public function success($message, $title = '')
     {
-        if(($title))
-            $script = 'toastr.success("' . $message . '","' . $title . '")';
-        else
-            $script = 'toastr.success("' . $message . '")';
-        $this->response()->script($script);
+        $this->addCommand(array('cmd' => 'toastr.success'), array('message' => $message, 'title' => $title));
     }
 
-    public function warning($message, $title = null)
+    public function warning($message, $title = '')
     {
-        if(($title))
-            $script = 'toastr.warning("' . $message . '","' . $title . '")';
-        else
-            $script = 'toastr.warning("' . $message . '")';
-        $this->response()->script($script);
+        $this->addCommand(array('cmd' => 'toastr.warning'), array('message' => $message, 'title' => $title));
     }
 
-    public function error($message, $title = null)
+    public function error($message, $title = '')
     {
-        if(($title))
-            $script = 'toastr.error("' . $message . '","' . $title . '")';
-        else
-            $script = 'toastr.error("' . $message . '")';
-        $this->response()->script($script);
+        $this->addCommand(array('cmd' => 'toastr.error'), array('message' => $message, 'title' => $title));
     }
 
     public function remove()
